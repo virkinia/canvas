@@ -1,0 +1,7 @@
+{
+  "name": "rotateImage",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
