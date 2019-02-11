@@ -6,9 +6,7 @@
 
 <img
   #cuadrado
-  [ngClass]="{ box: !selected, selected: selected }"
-  class="box"
+  [ngClass]="selected ? 'seleccionado' : 'box'"
   src="assets/imgs/senial.png"
-  (click)="seleccionar($event)"
   [style.transform]="transformStyle"
 />

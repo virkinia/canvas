@@ -1,15 +1,15 @@
-import { Component, ViewChildren, QueryList } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { CuadradoComponent } from '../../components/cuadrado/cuadrado';
+import { Component, ViewChildren, QueryList } from "@angular/core";
+import { NavController } from "ionic-angular";
+import { CuadradoComponent } from "../../components/cuadrado/cuadrado";
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: "page-home",
+  templateUrl: "home.html"
 })
 export class HomePage {
   @ViewChildren(CuadradoComponent) componentes: QueryList<CuadradoComponent>;
 
-  data = ['uno', 'dos', 'tres', 'cuatro', 'cinco'];
+  data = ["uno", "dos", "tres", "cuatro", "cinco"];
   seleccionado: CuadradoComponent = null;
 
   constructor(public navCtrl: NavController) {}
@@ -19,12 +19,12 @@ export class HomePage {
   }
 
   seleccionar(event, index) {
-    if (this.seleccionado) {
-      this.seleccionado.de;
+    if (this.seleccionado != null) {
+      this.seleccionado.deseleccionar();
     }
 
     this.seleccionado = this.componentes.toArray()[index];
-    this.seleccionado.title = 'seleccionado';
-    this.seleccionado.selected = true;
+    this.seleccionado.title = "seleccionado";
+    this.seleccionado.seleccionar();
   }
 }
