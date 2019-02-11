@@ -4,4 +4,11 @@
   <div class="label">{{ title }}</div>
 </div> -->
 
-<img class="box" src="assets/imgs/senial.png" #cuadrado (click)="seleccionar($event)" [style.transform]="transformStyle" />
+<img
+  #cuadrado
+  [ngClass]="{ box: !selected, selected: selected }"
+  class="box"
+  src="assets/imgs/senial.png"
+  (click)="seleccionar($event)"
+  [style.transform]="transformStyle"
+/>

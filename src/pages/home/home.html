@@ -7,8 +7,8 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div *ngIf="seleccionado" class="panel" rotateCustom (angleChange)="onRotation($event)"></div>
+  <ng-container *ngFor="let item of data; index as i">
+    <cuadrado [title]="item" (click)="seleccionar($event, i)"></cuadrado>
+  </ng-container>
 </ion-content>

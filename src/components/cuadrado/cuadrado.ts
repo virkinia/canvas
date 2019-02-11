@@ -1,7 +1,6 @@
 import { Component, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import * as Hammer from 'hammerjs';
-import { Title } from '@angular/platform-browser';
 
 /**
  * Generated class for the CuadradoComponent component.
@@ -20,6 +19,7 @@ export class CuadradoComponent {
 
   angle: Number;
   transformStyle: String;
+  selected: boolean;
 
   constructor(public navCtrl: NavController) {
     // set default angle to 0deg
@@ -36,6 +36,10 @@ export class CuadradoComponent {
   seleccionar(event) {
     console.log('Evento seleccionado', event);
     this.seleccionado.emit(this.selectedItem);
+  }
+
+  deseleccinar() {
+    this.selected = false;
   }
 
   ngAfterViewInit(): void {
